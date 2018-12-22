@@ -1,9 +1,12 @@
 package org.javaprojects.spring.project.forum.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "post")
+@JsonIgnoreProperties(value = {"user"})
 public class Post {
 
     private Integer id;
