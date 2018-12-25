@@ -28,6 +28,24 @@ public class PostController {
     @Autowired
     PostService postService;
 
+    //Versioning different URL mapping
+    @GetMapping(path = "/v1/users/{id}/posts" )
+    public List<Post> getUserPostsVErsioning1(@PathVariable Integer id) {
+        LOGGER.info("Invoking v1 URL mapping getUserPosts()");
+        List<Post> userPosts = postService.getUserPosts(id);
+        return userPosts;
+    }
+    @GetMapping(path = "/v2/users/{id}/posts" )
+    public List<Post> getUserPostsVErsioning2(@PathVariable Integer id) {
+        LOGGER.info("Invoking v2 URL mapping getUserPosts()");
+        List<Post> userPosts = postService.getUserPosts(id);
+        return userPosts;
+    }
+
+
+
+
+
     // How to return as XML in List Map requrires special maven dependency
     @GetMapping(path = "/users/{id}/posts",headers="Accept=application/xml",produces=MediaType.APPLICATION_XML_VALUE)
     public List<Post> getUserPosts(@PathVariable Integer id) {

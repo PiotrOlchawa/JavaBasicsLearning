@@ -41,6 +41,14 @@ public class PostDao {
         }
     }
 
+    public Post findById(Integer postId){
+        Optional<Post> optionalPost = postsList.stream().filter(l->l.getId()==postId).findFirst();
+        if(!optionalPost.isPresent()){
+            throw new PostNotFoundException("Post not Found");
+        }
+        return optionalPost.get();
+    }
+
     public Post save(Post post) {
         post.setId(postCount++);
         postsList.add(post);

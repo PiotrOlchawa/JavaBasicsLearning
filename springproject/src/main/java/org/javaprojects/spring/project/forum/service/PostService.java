@@ -66,4 +66,9 @@ public class PostService {
     public Post deletePost(Integer id) {
         return postDao.delete(id);
     }
+
+
+    public Post getPost(Integer post_id) {
+        return postDao.findById(post_id);
+    }
 }
