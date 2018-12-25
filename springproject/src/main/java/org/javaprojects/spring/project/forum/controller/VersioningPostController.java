@@ -35,7 +35,8 @@ public class VersioningPostController {
         return userPosts;
     }
 
-    //Versioning - request param Invoking GET /users/{id}/posts/param?version=1
+    //Versioning - request param
+    // Invoking GET /users/{id}/posts/param?version=1
     @GetMapping(path = "/users/{id}/posts",params = "version=1")
     public List<Post> getUserPostsVErsioning3(@PathVariable Integer id) {
         LOGGER.info("Invoking v3 request param getUserPosts()");
@@ -49,7 +50,8 @@ public class VersioningPostController {
         return userPosts;
     }
 
-    //Versioning - header versioning Invoking GET set HTTP header to key X-API-VERSION and value 1
+    //Versioning - header versioning
+    // Invoking GET set HTTP header to key X-API-VERSION and value 1
     @GetMapping(path = "/users/{id}/posts/header",headers = "X-API-VERSION=1")
     public List<Post> getUserPostsVErsioning5(@PathVariable Integer id) {
         LOGGER.info("Invoking v5 header getUserPosts()");
@@ -63,14 +65,15 @@ public class VersioningPostController {
         return userPosts;
     }
 
-    //Versioning - produces (header parameter) Invoking GET set HTTP header to key Accept and value application.vnd.company.app-v1+json
-    @GetMapping(path = "/users/{id}/posts/produces",produces = "application.vnd.company.app-v1+json")
+    //Versioning - produces (header parameter)
+    // Invoking GET set HTTP header to key Accept and value application.vnd.company.app-v1+json
+    @GetMapping(path = "/users/{id}/posts/produces",produces = "application/vnd.company.app-v1+json")
     public List<Post> getUserPostsVErsioning7(@PathVariable Integer id) {
         LOGGER.info("Invoking v7 produces getUserPosts()");
         List<Post> userPosts = postService.getUserPosts(id);
         return userPosts;
     }
-    @GetMapping(path = "/users/{id}/posts/produces",produces = "application.vnd.company.app-v1+json")
+    @GetMapping(path = "/users/{id}/posts/produces",produces = "application/vnd.company.app-v2+json")
     public List<Post> getUserPostsVErsioning8(@PathVariable Integer id) {
         LOGGER.info("Invoking v8 produces getUserPosts()");
         List<Post> userPosts = postService.getUserPosts(id);
