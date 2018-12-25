@@ -3,17 +3,28 @@ package org.javaprojects.spring.project.forum.domain;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "post")
 @JsonIgnoreProperties(value = {"user"})
 @JsonFilter("PostFilter")
+@Entity
 public class Post {
 
+    @Id
+    @GeneratedValue
+    @NotNull
     private Integer id;
     private String postTitle;
     private String description;
+    @ManyToOne(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
+    )
+    @JoinColumn(name = "USER_ID")
     private User user;
 
     public Post() {

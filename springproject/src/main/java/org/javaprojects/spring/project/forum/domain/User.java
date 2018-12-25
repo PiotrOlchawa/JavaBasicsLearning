@@ -1,11 +1,11 @@
 package org.javaprojects.spring.project.forum.domain;
 
-
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlElement;
@@ -15,8 +15,14 @@ import java.util.List;
 // Swagger
 @ApiModel(description = "All details about User")
 @XmlRootElement(name = "user")
+@Entity
+@Table(name = "USER")
 public class User {
 
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "ID")
     private Integer id;
     @Size(min = 2,message = "Name should have min 2 characters")
     //Swagger
@@ -26,6 +32,12 @@ public class User {
     //Swagger
     @ApiModelProperty(notes="Birth date should not be in past")
     private Date birthDate;
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            targetEntity = Post.class,
+            mappedBy = "user"
+    )
     private List<Post> postList;
 
     public User() {
