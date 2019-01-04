@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -28,7 +29,7 @@ public class UserController {
     @Autowired
     PostService postService;
 
-    @GetMapping(path = "/users/{id}")
+    @GetMapping(path = "/jpa/users/{id}")
     public Resource<User> getUser(@PathVariable Integer id) {
         User user = userService.getUser(id);
         Resource<User> resource = new Resource<>(user);
@@ -38,12 +39,12 @@ public class UserController {
         return resource;
     }
 
-    @GetMapping(path = "/users")
+    @GetMapping(path = "/jpa/users", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<User> getUsers() {
         return userService.getAllUsers();
     }
 
-    @PostMapping(path = "/users")
+    @PostMapping(path = "/jpa/users")
     public ResponseEntity createUser(@Valid @RequestBody User user) {
         User createdUser = userService.saveUser(user);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -52,4 +53,30 @@ public class UserController {
                 .toUri();
         return ResponseEntity.created(location).build();
     }
+
+    @GetMapping(path = "/users/{id}")
+    public Resource<User> getPseudoUser(@PathVariable Integer id) {
+        User user = userService.getPseudoUser(id);
+        Resource<User> resource = new Resource<>(user);
+        ControllerLinkBuilder getUsersLink = ControllerLinkBuilder.linkTo(
+                ControllerLinkBuilder.methodOn(this.getClass()).getUsers());
+        resource.add(getUsersLink.withRel("all-users"));
+        return resource;
+    }
+
+    @GetMapping(path = "/users")
+    public List<User> getPseudoUsers() {
+        return userService.getAllPseudoUsers();
+    }
+
+    @PostMapping(path = "/users")
+    public ResponseEntity createPseudoUser(@Valid @RequestBody User user) {
+        User createdUser = userService.savePseudoUser(user);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(createdUser.getId())
+                .toUri();
+        return ResponseEntity.created(location).build();
+    }
+
 }

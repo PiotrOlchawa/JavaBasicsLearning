@@ -24,14 +24,22 @@ public class User {
     @NotNull
     @Column(name = "ID")
     private Integer id;
+
     @Size(min = 2,message = "Name should have min 2 characters")
     //Swagger
     @ApiModelProperty(notes="Name should have at least two characters")
     private String name;
+
+    @Column(name = "PASSWORD")
+    @NotNull
+    @Size(min=7,message = "Password should have min 7 characters")
+    private String password;
+
     @Past
     //Swagger
     @ApiModelProperty(notes="Birth date should not be in past")
     private Date birthDate;
+
     @OneToMany(
             fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,

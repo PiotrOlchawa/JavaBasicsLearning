@@ -4,8 +4,9 @@ import org.javaprojects.spring.project.forum.domain.Post;
 import org.javaprojects.spring.project.forum.domain.User;
 import org.javaprojects.spring.project.forum.exception.PostNotFoundException;
 import org.javaprojects.spring.project.forum.exception.UserNotFoundException;
-import org.javaprojects.spring.project.forum.repository.PostDao;
+import org.javaprojects.spring.project.forum.repository.PostPseudoDao;
 import org.javaprojects.spring.project.forum.repository.UserDao;
+import org.javaprojects.spring.project.forum.repository.UserPseudoDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,29 +19,27 @@ import java.util.Optional;
 public class PostService {
 
     @Autowired
-    PostDao postDao;
-    @Autowired
-    UserDao userDao;
+    PostPseudoDao postPseudoDao;
 
     public List<Post> getUserPosts(Integer userId) {
-        return postDao.findByUser(userId);
+        return postPseudoDao.findByUser(userId);
     }
 
     public Post createPostForUser(Post post, Integer userId) {
-        Optional<User> user = UserDao.users.stream().filter(l -> l.getId() == userId).findFirst();
+        Optional<User> user = UserPseudoDao.users.stream().filter(l -> l.getId() == userId).findFirst();
         if (!user.isPresent()) {
             throw new UserNotFoundException("There is no such user");
         }
         post.setUser(user.get());
-        return postDao.save(post);
+        return postPseudoDao.save(post);
     }
 
     public Map<String, String> getPostDescriptionForUser(Integer userId, Integer post_id) {
-        Optional<User> user = UserDao.users.stream().filter(l -> l.getId() == userId).findFirst();
+        Optional<User> user = UserPseudoDao.users.stream().filter(l -> l.getId() == userId).findFirst();
         if (!user.isPresent()) {
             throw new UserNotFoundException("There is no such user");
         }
-        Optional<Post> post = PostDao.postsList.stream()
+        Optional<Post> post = PostPseudoDao.postsList.stream()
                 .filter(l -> l.getUser().equals(user.get()))
                 .filter(l -> l.getId() == post_id).findFirst();
         if (!post.isPresent()) {
@@ -50,11 +49,11 @@ public class PostService {
     }
 
     public Post getPostForUser(Integer userId, Integer post_id) {
-        Optional<User> user = UserDao.users.stream().filter(l -> l.getId() == userId).findFirst();
+        Optional<User> user = UserPseudoDao.users.stream().filter(l -> l.getId() == userId).findFirst();
         if (!user.isPresent()) {
             throw new UserNotFoundException("There is no such user");
         }
-        Optional<Post> post = PostDao.postsList.stream()
+        Optional<Post> post = PostPseudoDao.postsList.stream()
                 .filter(l -> l.getUser().equals(user.get()))
                 .filter(l -> l.getId() == post_id).findFirst();
         if (!post.isPresent()) {
@@ -64,11 +63,11 @@ public class PostService {
     }
 
     public Post deletePost(Integer id) {
-        return postDao.delete(id);
+        return postPseudoDao.delete(id);
     }
 
 
     public Post getPost(Integer post_id) {
-        return postDao.findById(post_id);
+        return postPseudoDao.findById(post_id);
     }
 }
