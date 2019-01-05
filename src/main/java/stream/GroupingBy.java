@@ -1,4 +1,4 @@
-package org.javaprojects.spring.project.stream;
+package stream;
 
 
 import java.math.BigDecimal;

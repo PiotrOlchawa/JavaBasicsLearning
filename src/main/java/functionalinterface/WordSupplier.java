@@ -1,4 +1,4 @@
-package org.javaprojects.spring.project.functionalinterface;
+package functionalinterface;
 
 import java.util.function.Supplier;
 

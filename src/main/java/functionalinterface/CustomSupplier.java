@@ -1,4 +1,4 @@
-package org.javaprojects.spring.project.functionalinterface;
+package functionalinterface;
 
 @FunctionalInterface
 public interface CustomSupplier {

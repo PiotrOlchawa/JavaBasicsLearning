@@ -11,7 +11,7 @@ public class IsolatedPasswordEncoderTest {
     @Test
     public void passwordEncoderTest(){
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String password = passwordEncoder.encode("password");
+        String password = passwordEncoder.encode("piotr");
         System.out.println(password);
     }
 }

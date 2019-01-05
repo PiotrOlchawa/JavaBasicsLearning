@@ -1,0 +1,27 @@
+2019-01-05 00:01:02 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Błąd składniowy w wyrażeniu SQL "INSERT INTO USER (NAME,PASSWORD) VALUES (PIOTR,$2A$10$MTESR7NYP[*]..WZUYFOHE0JUJTJTWJBHACAT6IY9NXNHNBDFMQCR7TE) "; oczekiwano "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO USER (NAME,PASSWORD) VALUES (PIOTR,$2A$10$MTESR7NYP[*]..WZUYFOHE0JUJTJTWJBHACAT6IY9NXNHNBDFMQCR7TE) "; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into user (username,password) values (piotr,$2a$10$MtEsR7nYp..WzuyFOHe0jujtJtWjBHaCAT6IY9NXnHnBdFMqcR7te) [42001-197]
+2019-01-05 00:01:13 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Błąd składniowy w wyrażeniu SQL "INSERT INTO USER (NAME,PASSWORD) VALUES (PIOTR,$2A$10$MTESR7NYP[*]..WZUYFOHE0JUJTJTWJBHACAT6IY9NXNHNBDFMQCR7TE) "; oczekiwano "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO USER (NAME,PASSWORD) VALUES (PIOTR,$2A$10$MTESR7NYP[*]..WZUYFOHE0JUJTJTWJBHACAT6IY9NXNHNBDFMQCR7TE) "; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into user (username,password) values (piotr,$2a$10$MtEsR7nYp..WzuyFOHe0jujtJtWjBHaCAT6IY9NXnHnBdFMqcR7te) [42001-197]
+2019-01-05 00:01:14 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Błąd składniowy w wyrażeniu SQL "INSERT INTO USER (NAME,PASSWORD) VALUES (PIOTR,$2A$10$MTESR7NYP[*]..WZUYFOHE0JUJTJTWJBHACAT6IY9NXNHNBDFMQCR7TE) "; oczekiwano "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO USER (NAME,PASSWORD) VALUES (PIOTR,$2A$10$MTESR7NYP[*]..WZUYFOHE0JUJTJTWJBHACAT6IY9NXNHNBDFMQCR7TE) "; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into user (username,password) values (piotr,$2a$10$MtEsR7nYp..WzuyFOHe0jujtJtWjBHaCAT6IY9NXnHnBdFMqcR7te) [42001-197]
+2019-01-05 00:01:15 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Błąd składniowy w wyrażeniu SQL "INSERT INTO USER (NAME,PASSWORD) VALUES (PIOTR,$2A$10$MTESR7NYP[*]..WZUYFOHE0JUJTJTWJBHACAT6IY9NXNHNBDFMQCR7TE) "; oczekiwano "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO USER (NAME,PASSWORD) VALUES (PIOTR,$2A$10$MTESR7NYP[*]..WZUYFOHE0JUJTJTWJBHACAT6IY9NXNHNBDFMQCR7TE) "; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+insert into user (username,password) values (piotr,$2a$10$MtEsR7nYp..WzuyFOHe0jujtJtWjBHaCAT6IY9NXnHnBdFMqcR7te) [42001-197]
+2019-01-05 00:07:44 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "USERS" nie istnieje
+Table "USERS" not found; SQL statement:
+select * from users [42102-197]
+2019-01-05 14:31:27 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Błąd składniowy w wyrażeniu SQL "SELECT * FROM USER
+INSERT INTO[*] AUTHORITIES (AUTHORITY,USER_ID) VALUES ('ROLE_USER',1) "
+Syntax error in SQL statement "SELECT * FROM USER
+INSERT INTO[*] AUTHORITIES (AUTHORITY,USER_ID) VALUES ('ROLE_USER',1) "; SQL statement:
+select * from user
+insert into authorities (authority,user_id) values ('ROLE_USER',1) [42000-197]
