@@ -38,11 +38,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         httpSecurity.authorizeRequests().antMatchers("/").permitAll().and()
                 .authorizeRequests().antMatchers("/h2-console/**").permitAll();
 
-        //httpSecurity.csrf().disable();
+        httpSecurity.csrf().disable();
         httpSecurity.headers().frameOptions().disable();
 
-        httpSecurity
-                //.csrf().disable()
+        httpSecurity.
+                csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().hasAnyRole("USER").and()
