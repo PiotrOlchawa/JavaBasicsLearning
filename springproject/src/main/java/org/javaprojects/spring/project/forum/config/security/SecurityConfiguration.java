@@ -49,6 +49,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .defaultSuccessUrl("/dashboard")
-                .permitAll();
+                .permitAll()
+                .and()
+                .sessionManagement().maximumSessions(1);
     }
 }
