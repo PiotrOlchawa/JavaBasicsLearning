@@ -6,12 +6,14 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import pl.somehost.security.spring.domain.User;
 
-//import javax.transaction.Transactional;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
-//@Transactional
+//import javax.transaction.Transactional;
+
+@Repository("UserDaoRepository")
+@Transactional
 public interface UserDao extends CrudRepository<User, Integer> {
 
     @Override
@@ -19,9 +21,9 @@ public interface UserDao extends CrudRepository<User, Integer> {
 
     Optional<User> findById(Integer id);
 
-    // Jesli nie ma query to wywala lazy inicialization bo w user fetch jest LAZY przy autthorities i postList
+    // Jesli nie ma query to wywala lazy inicialization bo w user fetch jest LAZY przy autthorities
     @Query("select u from User u"
-            + " left join fetch u.authorities left join fetch u.postList"
+            + " left join fetch u.authorities"
             + " where u.username = :username")
     User findByUsername(@Param("username") String username);
 

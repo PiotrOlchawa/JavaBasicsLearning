@@ -1,11 +1,11 @@
 package pl.somehost.security.spring.domain;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "AUTHORITIES")
 @Table(name = "AUTHORITIES")
 public class Authorities implements GrantedAuthority {
 
