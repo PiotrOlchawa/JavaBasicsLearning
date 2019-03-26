@@ -41,6 +41,7 @@ public class Runner {
 
         CustomSupplier customSupplier = () -> new String("Hello");
 
+
         Function<Integer, String> function = (Integer i) -> i.toString() + " appended string";
         String string = function.apply(1);
         //Used in mapper
@@ -57,5 +58,33 @@ public class Runner {
         integerList.stream().filter(predicate).forEach(i -> System.out.print("Modulo predicate " + i + "\n"));
 
 
+
+
+        // functional interface Printer implementation;
+        Printer printer = line -> System.out.println(line);
+        printer.print("Hellow");
+
+        Printer printer1 = Runner.print();
+        printer1.print("Hellow x");
+
     }
+
+    //consumer return Print implementation
+    static Printer print() {
+        return message -> {
+            System.out.println(message);
+        };
+    }
+
 }
+
+/*@FunctionalInterface
+public interface Consumer<T> {
+    void accept(T t);
+}*/
+interface Printer {
+    void print(String line);
+}
+
+
+

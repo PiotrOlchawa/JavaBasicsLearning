@@ -42,9 +42,6 @@ public class Runner {
                 .limit(10)
                 .forEach(System.out::println);
 
-
-        CustomSupplier customSupplier = () -> new String("Hello");
-
         Function<Integer, String> function = (Integer i) -> i.toString() + " appended string";
         String string = function.apply(1);
         //Used in mapper

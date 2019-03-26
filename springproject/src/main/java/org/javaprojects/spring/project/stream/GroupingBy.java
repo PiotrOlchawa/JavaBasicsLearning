@@ -35,8 +35,9 @@ public class GroupingBy {
 
         Map<String, Long> finalMap = new LinkedHashMap<>();
 
-        result1.entrySet().stream().sorted(Map.Entry.<String, Long>comparingByValue()
-                .reversed()).forEachOrdered(e -> finalMap.put(e.getKey(), e.getValue()));
+        result1.entrySet().stream()
+                .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+                .forEachOrdered(e -> finalMap.put(e.getKey(), e.getValue()));
 
 
         // grupowanie po ilosci wystapien name - obiekty
@@ -134,6 +135,10 @@ public class GroupingBy {
         System.out.println("////////////////////////////////////////////////");
         System.out.println(pieces);
         System.out.println("////////////////////////////////////////////////");
+
+        int[] array = {23,43,56,97,32};
+        Arrays.stream(array).reduce((x,y) -> x+y).ifPresent(s -> System.out.println(s));
+
     }
 
 

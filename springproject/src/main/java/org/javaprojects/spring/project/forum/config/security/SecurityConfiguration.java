@@ -26,8 +26,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-        auth.
-                userDetailsService(userDetailsServiceImpl)
+        auth
+                .userDetailsService(userDetailsServiceImpl)
                 .passwordEncoder(passwordEncoder);
     }
 
@@ -51,6 +51,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/dashboard")
                 .permitAll()
                 .and()
+                //session management prevents from concurent login
                 .sessionManagement().maximumSessions(1);
     }
 }

@@ -6,16 +6,14 @@ interface Writer{
 
 class NewWriter{
     public void save(String data, int color){
-
         System.out.println("Save data: " + data + " color: " + color);
     }
 }
 
-class DataWriter implements Writer{
+class NewWriterAdapter implements Writer{
 
     @Override
     public void save(String data){
-
         NewWriter adapter = new NewWriter();
         adapter.save(data, 0);
     }
@@ -24,8 +22,7 @@ class DataWriter implements Writer{
 public class DesignPatternsAdapter{
 
     public static void main(String[] args){
-
-        Writer writer = new DataWriter();
+        Writer writer = new NewWriterAdapter();
         writer.save("Super value");
     }
 }

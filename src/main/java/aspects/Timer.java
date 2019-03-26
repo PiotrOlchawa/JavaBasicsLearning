@@ -2,9 +2,11 @@ package aspects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
 @Component
+@EnableAspectJAutoProxy
 public class Timer {
     Long time;
 

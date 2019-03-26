@@ -114,7 +114,7 @@ class GarageDoor implements Door{
     }
 }
 
-class MainApi{
+class HomeFacade {
 
     private Light livingRoomLight = new LivingRoomLight();
     private Light hallLight = new HallLight();
@@ -157,10 +157,10 @@ public class Facade{
 
     public static void main(String[] args){
 
-        MainApi mainApi = new MainApi();
-        mainApi.lockHome();
-        mainApi.unlockHome();
-        mainApi.lightOn();
-        mainApi.lightOff();
+        HomeFacade homeFacade = new HomeFacade();
+        homeFacade.lockHome();
+        homeFacade.unlockHome();
+        homeFacade.lightOn();
+        homeFacade.lightOff();
     }
 }
