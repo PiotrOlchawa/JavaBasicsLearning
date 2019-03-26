@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f7655b5-2958-447c-8730-4aff6d39a430" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/springSecurity" beforeDir="false" afterPath="$PROJECT_DIR$/springSecurity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springSecurity/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/springSecurity/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springSecurity/target/classes/pl/somehost/security/spring/config/DatabaseConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/springSecurity/target/classes/pl/somehost/security/spring/config/DatabaseConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springSecurity/target/springMVCSecurity-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/springSecurity/target/springMVCSecurity-1.0-SNAPSHOT.war" afterDir="false" />
@@ -290,16 +291,6 @@
               <item name="JavaBasicsLearning" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaBasicsLearning" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="JavaBasicsLearning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaBasicsLearning" type="462c0819:PsiDirectoryNode" />
-              <item name="springproject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaBasicsLearning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaBasicsLearning" type="462c0819:PsiDirectoryNode" />
-              <item name="springSecurity" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -316,7 +307,7 @@
     <property name="SearchEverywhereHistoryKey" value="handleMethodArgumentNotValid&#9;null&#9;null&#10;responseentit&#9;FILE&#9;file:///home/piotr/JavaProjects/projectpatterns/springproject/src/main/java/org/javaprojects/spring/project/forum/exception/CustomizedResponseEntityExceptionHandler.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553597809131" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553598271177" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -668,7 +659,7 @@
       <workItem from="1551443185035" duration="1786000" />
       <workItem from="1552925311086" duration="4518000" />
       <workItem from="1553590053888" duration="429000" />
-      <workItem from="1553590539769" duration="2492000" />
+      <workItem from="1553590539769" duration="3018000" />
     </task>
     <servers />
   </component>
@@ -705,12 +696,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="433301000" />
+    <option name="totallyTimeSpent" value="433827000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="45" y="25" width="1555" height="875" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.38170975" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38170975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -725,7 +716,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3016086" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3016086" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32841823" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
