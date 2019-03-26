@@ -1,1 +1,0 @@
-INSERT INTO USERS (USERNAME,PASSWORD) values (piotr,haslo);
