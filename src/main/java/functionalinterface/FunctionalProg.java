@@ -1,14 +1,6 @@
-package org.javaprojects.spring.project.functionalinterface;
+package functionalinterface;
 
 import org.apache.el.stream.Stream;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import java.util.function.BiFunction;
-import java.util.function.IntSupplier;
-import java.util.function.Supplier;
-import java.util.stream.IntStream;
 
 public class FunctionalProg {
 
