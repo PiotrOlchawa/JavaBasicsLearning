@@ -1,7 +1,5 @@
 package functionalinterface;
 
-import org.apache.el.stream.Stream;
-
 public class FunctionalProg {
 
     public static void main(String args[]) {
